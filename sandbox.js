@@ -1,21 +1,33 @@
-var myname = 'mario';
-var age = 30;
-var isBoy = true;
-// myname = 20  // Invalid operation 
-// myname can take string velues only, because it has been decleared with string.
-myname = "Maria"; // Valid operation
-age = 40;
-isBoy = false;
-var circ = function (diameter) {
-    return diameter * Math.PI;
+// ========= Array =========
+var names = ["aa", "bb", "cc"];
+// names = "dd"  // [Invalid operation] because names has array data type
+names.push('dd');
+// names.push(4) // [invalid operation] because names array can only contain string elements
+var mixed = ["john", 23, "kia", "33"];
+// Her mixed has been initialized with types of data [string, num] so it can take 
+// items of string and number data-typs , but it can't take values of other data-types
+mixed.push("ria");
+mixed.push(21);
+mixed.push(33.22); // can also take descimal number
+// mixed.push(false) // Incalid operation
+mixed[0] = 11;
+// Values can also be changed to other data type value if it has been declared in the array
+// ========= Objects =========
+var ninja = {
+    name: "yosh",
+    age: 22,
+    gender: "male"
 };
-console.log(circ("sd"));
-// Here ts is not throwing error even though we are passing string in the function 
-// because function is not asking for any specific datatype as the argument
-// But if we see console is says NaN (not a number), it can be fixed or catched at compile 
-// if we add data type in the finction argument as below
-var circ2 = function (diameter) {
-    return diameter * Math.PI;
+// We can't cange the structure of an object like in the above object -
+// We need to add exactly 3 fiels not less or more
+// We can't assign attributes with diffrent data-types other than assigned data-type.
+ninja.name = "kio";
+// ninja.name = 22 // [Invalid Operation] , Can't assign int to a string variable
+// ninja.skills = ['fighting']  // [Invalid Operation],  Can't add any other field
+ninja = {
+    name: "aa",
+    age: 33,
+    gender: "female"
 };
-// console.log(circ2("sd"))  // Now this line throws error as invalid arg being passed
-console.log(circ2(5));
+console.log(ninja);
+//  above object should have exactly 3 fields with matching data types
