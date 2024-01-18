@@ -1,46 +1,64 @@
-// ========= Array =========
+// Lectute 5 - Explict Types
 
-let names = ["aa", "bb", "cc"]
+// Explicit Types
+let myname : string
+// This means 'myname' will only accept strings such as "hello"
+// similarly we can do this for other data types as well
 
-// names = "dd"  // [Invalid operation] because names has array data type
-names.push('dd')
+let age : number
+let isLoggedIn : boolean
 
-// names.push(4) // [invalid operation] because names array can only contain string elements
+// Now, we can to change any of the variable , w'll have to use data type in which it has been initialised like- 
+age = 40
 
-let mixed = ["john", 23, "kia", "33"]
+// age = "ten"  // Invalid operation : age only takes number data-type
 
-// Her mixed has been initialized with types of data [string, num] so it can take 
-// items of string and number data-typs , but it can't take values of other data-types
 
-mixed.push("ria")
-mixed.push(21)
-mixed.push(33.22) // can also take descimal number
-// mixed.push(false) // Incalid operation
+// ARRAYS
+let ninjas : string[]; 
+// This means that 'ninjas' array will only take 'string' as array elements
+// We can also initialize with some default value, so that we can directly perform operations like .push()
 
-mixed[0] = 11
-// Values can also be changed to other data type value if it has been declared in the array
+// ninjas.push('dsf') // Invalid operation : Variable 'ninjs' is used before initialzed
 
-// ========= Objects =========
-let ninja = {
-    name : "yosh",
-    age:22,
-    gender:"male"
+let names : string[] = []
+names.push("ion")
+
+// UNION TYPES
+// It can accept values with multiple data types 
+
+let mixed : (string|number|boolean)[] = []
+// 'mixed' can accept values from any of the datatype above(string,number,boolean)
+mixed.push("two")
+mixed.push(2)
+mixed.push(false)
+
+console.log(mixed)
+
+
+// Application
+let uid : string|number
+uid = "123";
+uid = 123;
+
+// OBJECTS
+let person : object;
+person = {name:"john", age:23, isAboveEighteen:true}
+
+let person2 : {
+    name : string,
+    age : number|string
+    isAboveEighteen : boolean
 }
 
-// We can't cange the structure of an object like in the above object -
-// We need to add exactly 3 fiels not less or more
-// We can't assign attributes with diffrent data-types other than assigned data-type.
-
-ninja.name = "kio"
-// ninja.name = 22 // [Invalid Operation] , Can't assign int to a string variable
-// ninja.skills = ['fighting']  // [Invalid Operation],  Can't add any other field
-
-ninja = {
-    name:"aa",
-    age:33,
-    gender:"female"
+person2 = {
+    name:'josh',
+    age:'six',  //Age as string
+    isAboveEighteen:false
 }
 
-console.log(ninja)
-
-//  above object should have exactly 3 fields with matching data types
+person2 = {
+    name:'josh',
+    age:6,   // age as number
+    isAboveEighteen:false
+}
